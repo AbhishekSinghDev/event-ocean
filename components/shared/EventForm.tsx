@@ -90,6 +90,7 @@ const EventForm: React.FC<EventFormProps> = (props) => {
     if (type === "Update") {
       if (!eventId) {
         router.back();
+        return;
       }
 
       try {
