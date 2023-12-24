@@ -1,10 +1,18 @@
 import EventForm from "@/components/shared/EventForm";
+import { getEventById } from "@/lib/actions/events.actions";
 import { auth } from "@clerk/nextjs";
 
-const UpdateEvent = () => {
-  const { sessionClaims } = auth();
+interface UpdateEventProps {
+  params: {
+    id: string;
+  };
+}
 
+const UpdateEvent = async ({ params: { id } }: UpdateEventProps) => {
+  const { sessionClaims } = auth();
   const userID = sessionClaims?.userId as string;
+
+  const event = await getEventById(id);
 
   return (
     <>
@@ -15,7 +23,12 @@ const UpdateEvent = () => {
       </section>
 
       <div className="wrapper my-8">
-        <EventForm userId={userID} type="Update" />
+        <EventForm
+          userId={userID}
+          type="Update"
+          event={event}
+          eventId={event._id}
+        />
       </div>
     </>
   );
