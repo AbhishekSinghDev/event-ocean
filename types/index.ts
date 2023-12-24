@@ -106,6 +106,7 @@ export type CreateCategoryParams = {
 // ====== ORDER PARAMS
 export type CheckoutOrderParams = {
   eventTitle: string;
+  eventDescription?: string;
   eventId: string;
   price: string;
   isFree: boolean;

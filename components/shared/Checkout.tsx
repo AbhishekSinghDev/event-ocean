@@ -15,6 +15,7 @@ const Checkout: React.FC<CheckoutProps> = ({ event, userId }) => {
   const onCheckout = async () => {
     const order = {
       eventTitle: event.title,
+      eventDescription: event.description,
       eventId: event._id,
       price: event.price,
       isFree: event.isFree,
