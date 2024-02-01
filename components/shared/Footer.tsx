@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
           </p>
 
           <p className="font-medium text-sm">
-            2023 EventOcean. All Rights Reserved.
+            2024 EventOcean. All Rights Reserved.
           </p>
         </div>
       </div>
